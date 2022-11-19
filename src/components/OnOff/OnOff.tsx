@@ -1,34 +1,51 @@
-import React from "react";
-import styles from './OnOff.module.css'
+import React, {useState} from 'react';
 
-type OnOffPropsType = {
-    on: boolean
+export type PropsType = {
+    // on: boolean
 }
 
-export function OnOff(props: OnOffPropsType) {
+
+export const OnOff: React.FC<PropsType> = (props) => {
+    console.log('OnOff render')
+    let [on, setOn] = useState(false);
+    console.log(`on: ${on}`)
+    const onStyle = {
+        display: 'inline-block',
+        width: '30px',
+        height: '20px',
+        border: '1px solid black',
+        backgroundColor: `${on ? 'green' : 'white'}`,
+    }
+
+    const offStyle = {
+        display: 'inline-block',
+        width: '30px',
+        margin: '0 10px',
+        height: '20px',
+        border: '1px solid black',
+        backgroundColor: `${on ? 'white' : 'red'}`,
+    }
+
+    const indicatorStyle = {
+        display: 'inline-block',
+        width: '10px',
+        height: '10px',
+        borderRadius: '50%',
+        border: '1px solid black',
+        backgroundColor: `${!on ? 'red' : 'green'}`,
+    }
+
     return (
-        <>
-            <div>
-                <div className={`${props.on && styles.green} ${styles.block}`}>on</div>
-                <div className={`${!props.on && styles.red} ${styles.block}`}>of</div>
-                <span className={`${!props.on && styles.red} ${props.on && styles.green} ${styles.span}`}></span>
+        <div>
+            <div style={onStyle} onClick={() => {
+                setOn(true)
+            }}>On
             </div>
-        </>
-    )
-}
-
-// type BlockPropsType = {
-//     style: boolean
-// }
-//
-// function Block(props: BlockPropsType) {
-//
-//     return (
-//         <div>
-//             <div className={`${props.style && styles.green} ${styles.block}`}>on</div>
-//             <div className={`${!props.style && styles.red} ${styles.block}`}>of</div>
-//             <span className={`${!props.style && styles.red} ${props.style && styles.green} ${styles.span}`}></span>
-//         </div>
-//     )
-//
-// }
+            <div style={offStyle} onClick={() => {
+                setOn(false)
+            }}>Off
+            </div>
+            <div style={indicatorStyle}></div>
+        </div>
+    );
+};
