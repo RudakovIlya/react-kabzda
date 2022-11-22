@@ -1,0 +1,11 @@
+.accordionBody {
+    max-height: 0px;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: padding .1s ease, max-height .3s ease;
+}
+
+.collapsed {
+    box-sizing: border-box;
+    max-height: 100%;
+}
