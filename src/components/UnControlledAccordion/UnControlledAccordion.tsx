@@ -5,16 +5,15 @@ import body from './UnControlledAccordionBody/body.module.css'
 
 const UnControlledAccordion = () => {
 
-    const [collapsed, setCollapsed] = useState(true);
-
+    const [collapsedAccordion, setCollapsed] = useState(true);
+    console.log('UnControlled Accordion')
     return (
         <div>
             <UnControlledAccordionTitle
-                title={'What to Learn? UnControlled'}
-                collapsed={collapsed}
+                title={'What to Learn? Accordion UnControlled'}
+                collapsed={collapsedAccordion}
                 onClick={setCollapsed}/>
-            <UnControlledAccordionBody className={`${!collapsed ? `${body.collapsed}` : ''}`}/>
-
+            <UnControlledAccordionBody className={`${!collapsedAccordion ? `${body.collapsed}` : ''}`}/>
         </div>
     );
 };

@@ -1,0 +1,12 @@
+
+.span svg{
+    width: 60px;
+    height: 60px;
+}
+
+.span svg g {
+    fill: black;
+}
+.span.active svg g  {
+    fill: yellow;
+}

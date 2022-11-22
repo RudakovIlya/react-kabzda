@@ -6,6 +6,8 @@ export type UnControlledAccordionBodyPropsType = {
     className: string
 }
 
+const getRandomNum = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
+
 const UnControlledAccordionBody: React.FC<UnControlledAccordionBodyPropsType> = ({className}) => {
 
     const uncontrolledAccordionBodyData = [
@@ -19,7 +21,6 @@ const UnControlledAccordionBody: React.FC<UnControlledAccordionBodyPropsType> = 
     const uncontrolledAccordionBodyItem = uncontrolledAccordionBodyData.map(({id, title}) => {
         return <div key={id}>{title}</div>
     })
-    const getRandomNum = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
     const bodyStyle = {
         padding: '10px',
         backgroundColor: `rgba(${getRandomNum(0, 255)}, ${getRandomNum(0, 255)}, ${getRandomNum(0, 255)},${Math.random()})`,

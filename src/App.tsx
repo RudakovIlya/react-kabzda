@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
+import UnControlledRating from "./components/UnControlledRating/UnControlledRating";
 
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
 
     return (
         <div className={'App'}>
+            <Accordion title={'What to Learn? Accordion Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
 
-            <Accordion title={'What to Learn? Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
             <UnControlledAccordion/>
+
+            <UnControlledRating/>
         </div>
     );
 }

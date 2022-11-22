@@ -1,8 +1,8 @@
 .App {
     max-width: 1000px;
     margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    column-gap: 50px;
-    row-gap: 50px;
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(200px,300px);
+    grid-gap: 30px;
 }
