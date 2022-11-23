@@ -5,6 +5,7 @@ import UnControlledAccordion from "./components/UnControlledAccordion/UnControll
 import UnControlledRating from "./components/UnControlledRating/UnControlledRating";
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
+import OnOff from "./components/OnOff/OnOff";
 
 
 function App() {
@@ -13,15 +14,18 @@ function App() {
 
     const [value, setValue] = useState<RatingValueType>(0)
 
+    const [on, setOn] = useState(false);
+
     return (
         <div className={'App'}>
-            <Accordion title={'What to Learn? Accordion Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
             <UnControlledAccordion/>
+            <Accordion title={'What to Learn? Accordion Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
 
             <UnControlledRating/>
             <Rating title={'Controlled'} value={value} setValue={setValue}/>
 
             <UnControlledOnOff/>
+            <OnOff on={on} setOn={setOn}/>
 
         </div>
     );

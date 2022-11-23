@@ -6,7 +6,7 @@ import body from './UnControlledAccordionBody/body.module.css'
 const UnControlledAccordion = () => {
 
     const [collapsedAccordion, setCollapsed] = useState(true);
-    console.log('UnControlled Accordion')
+
     return (
         <div>
             <UnControlledAccordionTitle

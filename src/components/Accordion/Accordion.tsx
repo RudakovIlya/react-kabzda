@@ -9,7 +9,7 @@ export type AccordionPropsType = {
 }
 
 const Accordion: React.FC<AccordionPropsType> = ({title, collapsed, onClickTitle}) => {
-    console.log('Accordion rendering')
+
     return (
         <div>
 

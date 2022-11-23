@@ -4,8 +4,12 @@ const UnControlledOnOff = () => {
 
     const [on, setOn] = useState<boolean>(true);
 
-    const onClickHandler = () => setOn(!on);
-
+    const onClickHandler = () => {
+            setOn(true)
+    };
+    const onClickHandler2 = () => {
+        setOn(false)
+    };
     const wrapper = {
         display: 'flex',
         columnGap: '10px'
@@ -38,7 +42,7 @@ const UnControlledOnOff = () => {
             <h3>UnControlledOnOff</h3>
             <div style={wrapper}>
                 <div onClick={onClickHandler} style={{...buttons, ...back}}>On</div>
-                <div onClick={onClickHandler} style={{...buttons, ...back2}}>Off</div>
+                <div onClick={onClickHandler2} style={{...buttons, ...back2}}>Off</div>
                 <div style={{...lamp, ...lampBack}} className={'123'}></div>
             </div>
         </div>
