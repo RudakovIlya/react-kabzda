@@ -14,7 +14,7 @@ function App() {
 
     const [value, setValue] = useState<RatingValueType>(0)
 
-    const [on, setOn] = useState(false);
+    const [on, setOn] = useState<boolean>(false);
 
     return (
         <div className={'App'}>

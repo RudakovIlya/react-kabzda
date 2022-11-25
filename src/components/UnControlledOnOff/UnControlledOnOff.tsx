@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 
-const UnControlledOnOff = () => {
+
+const UnControlledOnOff: React.FC = () => {
 
     const [on, setOn] = useState<boolean>(true);
 
     const onClickHandler = () => {
-            setOn(true)
+        setOn(true);
     };
     const onClickHandler2 = () => {
         setOn(false)
@@ -19,7 +20,6 @@ const UnControlledOnOff = () => {
         height: '30px',
         border: '1px solid black',
         padding: '7px 6px 6px',
-        // backgroundColor: `${on ? 'green' : 'red'}`,
     };
     const lamp = {
         width: '20px',
