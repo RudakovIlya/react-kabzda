@@ -13,7 +13,7 @@ const UnControlledStar: React.FC<UnControlledStarPropsType> = ({selected, values
 
     const onClickHandler = () => {
         onClick(values)
-    }
+    };
 
     return (
         <span onClick={onClickHandler} className={`${star.span} ${selected ? star.active : ''}`}><svg version="1.0"

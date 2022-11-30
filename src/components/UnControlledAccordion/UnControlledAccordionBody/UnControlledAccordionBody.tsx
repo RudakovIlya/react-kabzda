@@ -20,12 +20,13 @@ const UnControlledAccordionBody: React.FC<UnControlledAccordionBodyPropsType> = 
 
     const uncontrolledAccordionBodyItem = uncontrolledAccordionBodyData.map(({id, title}) => {
         return <div key={id}>{title}</div>
-    })
+    });
+
     const bodyStyle = {
         padding: '10px',
         backgroundColor: `rgba(${getRandomNum(0, 255)}, ${getRandomNum(0, 255)}, ${getRandomNum(0, 255)},${Math.random()})`,
         color: `rgb(${getRandomNum(0, 255)}, ${getRandomNum(0, 255)}, ${getRandomNum(0, 255)} )`
-    }
+    };
 
     return (
         <div className={`${body.accordionBody} ${className}`}>

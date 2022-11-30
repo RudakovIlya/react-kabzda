@@ -12,7 +12,7 @@ const Star: React.FC<StarPropsType> = ({selected, value, setValue}) => {
 
     const onClickHandler = () => {
         setValue(value)
-    }
+    };
 
     return (
             <span onClick={onClickHandler} className={`${star.span} ${selected ? `${star.active}` : ''}`}>

@@ -6,7 +6,7 @@ const UnControlledRating = () => {
 
     const [value, setValue] = useState<UnControlledValuesType>(0);
 
-    const title = 'UnControlled'
+    const title = 'UnControlled';
 
     return (
         <div className={'main'}>
