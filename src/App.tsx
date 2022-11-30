@@ -10,9 +10,9 @@ import OnOff from "./components/OnOff/OnOff";
 
 function App() {
 
-    const [collapsed, setCollapsed] = useState<boolean>(true)
+    const [collapsed, setCollapsed] = useState<boolean>(true);
 
-    const [value, setValue] = useState<RatingValueType>(0)
+    const [value, setValue] = useState<RatingValueType>(0);
 
     const [on, setOn] = useState<boolean>(false);
 

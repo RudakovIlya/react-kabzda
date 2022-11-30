@@ -10,7 +10,7 @@ const AccordionTitle: React.FC<AccordionTitlePropsType> = ({title, collapsed, on
 
     const onClickTitleHandler = () => {
         onClickTitle(!collapsed)
-    }
+    };
 
     return (
         <h3 onClick={onClickTitleHandler}>{title}</h3>

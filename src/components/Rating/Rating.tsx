@@ -4,12 +4,12 @@ import Star from "./Star/Star";
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
 export  type RatingPropsType = {
-    title:string
+    title: string
     value: RatingValueType
     setValue: (value: RatingValueType) => void
 }
 
-const Rating: React.FC<RatingPropsType> = ({value, setValue,title}) => {
+const Rating: React.FC<RatingPropsType> = ({value, setValue, title}) => {
     return (
         <div>
             <h3>{title}</h3>

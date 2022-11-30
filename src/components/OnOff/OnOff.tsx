@@ -10,10 +10,10 @@ const OnOff: React.FC<OnOffPropsType> = ({on, setOn}) => {
 
     const onClickHandler = () => {
         setOn(true)
-    }
+    };
     const onClickHandler2 = () => {
         setOn(false)
-    }
+    };
 
     return (
         <div>
