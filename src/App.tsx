@@ -16,6 +16,7 @@ function App() {
 
     const [on, setOn] = useState<boolean>(false);
 
+
     return (
         <div className={'App'}>
             <UnControlledAccordion/>
@@ -24,7 +25,7 @@ function App() {
             <UnControlledRating/>
             <Rating title={'Controlled'} value={value} setValue={setValue}/>
 
-            <UnControlledOnOff/>
+            <UnControlledOnOff onChange={(on) => on}/>
             <OnOff on={on} setOn={setOn}/>
 
         </div>

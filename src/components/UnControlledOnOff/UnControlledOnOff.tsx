@@ -1,15 +1,21 @@
 import React, {useState} from 'react';
 
+type UnControlledOnOffPropsType = {
+    onChange: (on: boolean) => void
+    defaultValueOn?: boolean
+}
 
-const UnControlledOnOff: React.FC = () => {
+const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = (props) => {
 
-    const [on, setOn] = useState<boolean>(true);
+    const [on, setOn] = useState<boolean>(props.defaultValueOn ? props.defaultValueOn : false);
 
     const onClickHandler = () => {
         setOn(true);
+        props.onChange(true)
     };
     const onClickHandler2 = () => {
         setOn(false)
+        props.onChange(false)
     };
     const wrapper = {
         display: 'flex',

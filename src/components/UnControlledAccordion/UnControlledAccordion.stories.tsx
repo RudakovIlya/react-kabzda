@@ -7,5 +7,5 @@ export default {
 } as ComponentMeta<typeof UnControlledAccordion>
 
 export const UnControlledAccordionComponent: ComponentStory<typeof UnControlledAccordion> = () => {
-    return <UnControlledAccordion/>
+    return <UnControlledAccordion />
 }

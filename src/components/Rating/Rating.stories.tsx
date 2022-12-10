@@ -13,11 +13,35 @@ export const RatingStar: ComponentStory<typeof Rating> = (args: RatingPropsType)
     return <Rating {...args} value={rat} setValue={setRat}/>
 };
 
-export const RatingsValue: ComponentStory<typeof Rating> = (args: RatingPropsType) => <Rating {...args}
-                                                                                              setValue={action('setValue')}/>
+const RatingsValue: ComponentStory<typeof Rating> = (args: RatingPropsType) => <Rating {...args}
+                                                                                       setValue={action('setValue')}/>
 
-const one = RatingsValue.bind({});
+export const zero = RatingsValue.bind({});
+zero.args = {
+    value: 0,
+}
+
+export const one = RatingsValue.bind({});
 one.args = {
     value: 1,
 }
 
+export const two = RatingsValue.bind({});
+two.args = {
+    value: 2,
+}
+
+export const three = RatingsValue.bind({});
+three.args = {
+    value: 3,
+}
+
+export const four = RatingsValue.bind({});
+four.args = {
+    value: 4,
+}
+
+export const five = RatingsValue.bind({});
+five.args = {
+    value: 5,
+}

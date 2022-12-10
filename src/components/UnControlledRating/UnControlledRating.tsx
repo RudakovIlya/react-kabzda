@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import UnControlledStar, {UnControlledValuesType} from "./UnControlledStar/UnControlledStar";
+import {RatingValueType} from "../Rating/Rating";
 
+type UnControlledRatingPropsType = {
+    defaultValue?: RatingValueType
+}
 
-const UnControlledRating = () => {
+const UnControlledRating: React.FC<UnControlledRatingPropsType> = (props) => {
 
-    const [value, setValue] = useState<UnControlledValuesType>(0);
+    const [value, setValue] = useState<UnControlledValuesType>(props.defaultValue ? props.defaultValue : 0);
 
     const title = 'UnControlled';
 
