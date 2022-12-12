@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://rudalovilya.github.io/react-kabzda",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.5.14",
     "@testing-library/jest-dom": "^5.16.5",
