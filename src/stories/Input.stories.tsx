@@ -6,20 +6,6 @@ import {action} from "@storybook/addon-actions";
 export default {
     title: 'Input',
     component: Input,
-    argTypes: {
-        type: {
-            description: 'Input',
-            control: {type: 'color'}
-        },
-        max: {
-            defaultValue: 10,
-            control: {type: 'select'},
-        },
-        color: {
-            defaultValue: 'red',
-        },
-        value: {}
-    }
 } as ComponentMeta<typeof Input>
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
