@@ -1,19 +1,17 @@
 import React from 'react';
-import {v1} from "uuid";
+import {ItemType} from "../Accordion";
 
-const AccordionBody = () => {
+type AccordionBodyType = {
+    items: ItemType[]
+    onClick: (value: any) => void
+}
 
-    const accordionBodyData = [
-        {id: v1(), title: 'HTML'},
-        {id: v1(), title: 'JS'},
-        {id: v1(), title: 'React'},
-        {id: v1(), title: 'Redux'},
-        {id: v1(), title: 'TypeScript'},
-    ];
+const AccordionBody: React.FC<AccordionBodyType> = (props) => {
+    const {items, onClick} = props
 
-    const accordionBodyItem = accordionBodyData.map(({id, title}) => {
+    const accordionBodyItem = items.map((item) => {
         return (
-            <div key={id}>{title}</div>
+            <div onClick={() => onClick(item.value)} key={item.id}>{item.title}</div>
         )
     });
 
