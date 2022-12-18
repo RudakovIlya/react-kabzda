@@ -1,14 +1,24 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import Input from "./Input";
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Input',
     component: Input,
     argTypes: {
         type: {
-            description: 'Input'
-        }
+            description: 'Input',
+            control: {type: 'color'}
+        },
+        max: {
+            defaultValue: 10,
+            control: {type: 'select'},
+        },
+        color: {
+            defaultValue: 'red',
+        },
+        value: {}
     }
 } as ComponentMeta<typeof Input>
 
@@ -18,7 +28,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     type: 'color',
-    value: '#e66465'
+    color: 'red'
 }
 
 /*=================================================================================================*/
@@ -28,6 +38,8 @@ export const UnControlledTemplate: ComponentStory<typeof Input> = () => {
     const [value, setValue] = useState<string>('');
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const actionFoo = action('input value is changed');
+        actionFoo();
         setValue(event.currentTarget.value)
     };
     return <><Input value={value} onChange={onChange}/> ----------- {value}</>
@@ -43,7 +55,7 @@ export const UnControlledInputValueByButtonsPress: ComponentStory<typeof Input> 
 
     const onSave = () => {
         const el = inputRef.current as HTMLInputElement;
-        setValue(el?.value)
+        setValue(el.value)
     }
 
     return <><input type="text" ref={inputRef}/>
@@ -89,4 +101,32 @@ export const ControlledSelect = () => {
         <option value={'2'}>Moscow</option>
         <option value={'3'}>Kiev</option>
     </select>
+}
+
+/*=================================================================================================*/
+
+export const ControlledRadioButton = () => {
+    const [value, setValue] = useState('milk');
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.currentTarget.value)
+    }
+    return (
+        <div>
+            <label>
+                bread
+                <input checked={value === 'bread'} onChange={onChange} value={'bread'} name={'radio-button'}
+                       type="radio"/>
+            </label>
+            <label>
+                milk
+                <input checked={value === 'milk'} onChange={onChange} value={'milk'} name={'radio-button'}
+                       type="radio"/>
+            </label>
+            <label>
+                cheese
+                <input checked={value === 'cheese'} onChange={onChange} value={'cheese'} name={'radio-button'}
+                       type="radio"/>
+            </label>
+        </div>
+    )
 }

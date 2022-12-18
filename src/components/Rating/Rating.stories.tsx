@@ -15,7 +15,6 @@ export const RatingStar: ComponentStory<typeof Rating> = (args: RatingPropsType)
 
 const RatingsValue: ComponentStory<typeof Rating> = (args: RatingPropsType) => <Rating {...args}
                                                                                        setValue={action('setValue')}/>
-
 export const zero = RatingsValue.bind({});
 zero.args = {
     value: 0,
