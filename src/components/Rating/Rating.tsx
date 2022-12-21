@@ -22,4 +22,5 @@ const Rating: React.FC<RatingPropsType> = ({value, setValue, title}) => {
     );
 };
 
+export const RatingContainer = React.memo(Rating)
 export default Rating;

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import {AccordionContainer} from "./components/Accordion/Accordion";
 import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 import UnControlledRating from "./components/UnControlledRating/UnControlledRating";
-import Rating, {RatingValueType} from "./components/Rating/Rating";
+import {RatingContainer, RatingValueType} from "./components/Rating/Rating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
-import OnOff from "./components/OnOff/OnOff";
+import  {OnOffContainer} from "./components/OnOff/OnOff";
 
 function App() {
 
@@ -15,22 +15,22 @@ function App() {
 
     const [on, setOn] = useState<boolean>(false);
 
+    const items = [{id: '1', title: 'Title', value: 2}, {id: '2', title: 'Title', value: 2}, {
+        id: '3',
+        title: 'Title',
+        value: 2
+    }, {id: '4', title: 'Title', value: 2}]
 
     return (
         <div className={'App'}>
             <UnControlledAccordion/>
-            <Accordion items={[{id: '1', title: 'Title', value: 2}, {id: '2', title: 'Title', value: 2}, {
-                id: '3',
-                title: 'Title',
-                value: 2
-            }, {id: '4', title: 'Title', value: 2}]} onClick={() => {
-            }} title={'What to Learn? Accordion Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
-
+            <AccordionContainer title={'What to Learn? Accordion Controlled'} onClickTitle={setCollapsed} items={items}
+                                collapsed={collapsed}/>
             <UnControlledRating/>
-            <Rating title={'Controlled'} value={value} setValue={setValue}/>
 
+            <RatingContainer title={'Controlled'} value={value} setValue={setValue}/>
             <UnControlledOnOff onChange={(on) => on}/>
-            <OnOff on={on} setOn={setOn}/>
+            <OnOffContainer on={on} setOn={setOn}/>
 
         </div>
     );

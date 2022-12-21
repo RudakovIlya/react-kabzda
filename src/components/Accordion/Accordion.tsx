@@ -13,18 +13,17 @@ export type AccordionPropsType = {
     collapsed: boolean
     onClickTitle: (collapsed: boolean) => void
     items: ItemType[]
-    onClick: (value: any) => void
 }
 
-const Accordion: React.FC<AccordionPropsType> = ({title, collapsed, onClickTitle, onClick, items}) => {
+const Accordion: React.FC<AccordionPropsType> = ({title, collapsed, onClickTitle, items}) => {
 
     return (
         <div>
 
             <AccordionTitle title={title} onClickTitle={onClickTitle} collapsed={collapsed}/>
-            {!collapsed && <AccordionBody onClick={onClick} items={items}/>}
+            {!collapsed && <AccordionBody items={items}/>}
         </div>
     );
 };
 
-export default Accordion;
+export const AccordionContainer = React.memo(Accordion)

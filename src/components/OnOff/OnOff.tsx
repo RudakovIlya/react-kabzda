@@ -27,4 +27,6 @@ const OnOff: React.FC<OnOffPropsType> = ({on, setOn}) => {
     );
 };
 
+export const OnOffContainer = React.memo(OnOff);
+
 export default OnOff;

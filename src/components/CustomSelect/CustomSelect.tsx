@@ -70,4 +70,5 @@ const CustomSelect: React.FC<CustomSelectPropsType> = (props) => {
     );
 };
 
-export default CustomSelect;
+export const CustomSelectContainer = React.memo(CustomSelect)
+

@@ -3,15 +3,14 @@ import {ItemType} from "../Accordion";
 
 type AccordionBodyType = {
     items: ItemType[]
-    onClick: (value: any) => void
 }
 
 const AccordionBody: React.FC<AccordionBodyType> = (props) => {
-    const {items, onClick} = props
+    const {items} = props
 
     const accordionBodyItem = items.map((item) => {
         return (
-            <div onClick={() => onClick(item.value)} key={item.id}>{item.title}</div>
+            <div key={item.id}>{item.title}</div>
         )
     });
 
