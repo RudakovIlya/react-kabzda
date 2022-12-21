@@ -1,4 +1,4 @@
-import React, {KeyboardEvent, KeyboardEventHandler, useEffect, useState} from 'react';
+import React, {KeyboardEvent, useEffect, useState} from 'react';
 import {ItemType} from "../Accordion/Accordion";
 import styles from './CustomSelect.module.css'
 

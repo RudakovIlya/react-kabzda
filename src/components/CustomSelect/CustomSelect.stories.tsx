@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import CustomSelect from "./CustomSelect";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
-import {action} from "@storybook/addon-actions";
 import {v1} from "uuid";
 
 export default {

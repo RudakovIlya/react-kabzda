@@ -6,9 +6,6 @@ import UnControlledRating from "./components/UnControlledRating/UnControlledRati
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
 import OnOff from "./components/OnOff/OnOff";
-import CustomSelect from "./components/CustomSelect/CustomSelect";
-import {v1} from "uuid";
-
 
 function App() {
 
@@ -22,7 +19,11 @@ function App() {
     return (
         <div className={'App'}>
             <UnControlledAccordion/>
-            <Accordion items={[]} onClick={() => {
+            <Accordion items={[{id: '1', title: 'Title', value: 2}, {id: '2', title: 'Title', value: 2}, {
+                id: '3',
+                title: 'Title',
+                value: 2
+            }, {id: '4', title: 'Title', value: 2}]} onClick={() => {
             }} title={'What to Learn? Accordion Controlled'} collapsed={collapsed} onClickTitle={setCollapsed}/>
 
             <UnControlledRating/>
