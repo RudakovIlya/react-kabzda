@@ -24,4 +24,6 @@ const UnControlledRating: React.FC<UnControlledRatingPropsType> = (props) => {
     );
 };
 
+export const UnControlledRatingContainer = React.memo(UnControlledRating);
+
 export default UnControlledRating;

@@ -55,4 +55,6 @@ const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = (props) => {
     );
 };
 
+export const UnControlledOnOffContainer = React.memo(UnControlledOnOff)
+
 export default UnControlledOnOff;

@@ -21,4 +21,6 @@ const UnControlledAccordion = () => {
     );
 };
 
+export const UnControlledAccordionContainer = React.memo(UnControlledAccordion)
+
 export default UnControlledAccordion;

@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
 import {AccordionContainer} from "./components/Accordion/Accordion";
-import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
-import UnControlledRating from "./components/UnControlledRating/UnControlledRating";
+import {
+    UnControlledAccordionContainer
+} from "./components/UnControlledAccordion/UnControlledAccordion";
+import {UnControlledRatingContainer} from "./components/UnControlledRating/UnControlledRating";
 import {RatingContainer, RatingValueType} from "./components/Rating/Rating";
-import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
-import  {OnOffContainer} from "./components/OnOff/OnOff";
+import {UnControlledOnOffContainer} from "./components/UnControlledOnOff/UnControlledOnOff";
+import {OnOffContainer} from "./components/OnOff/OnOff";
 
 function App() {
 
@@ -23,15 +25,13 @@ function App() {
 
     return (
         <div className={'App'}>
-            <UnControlledAccordion/>
+            <UnControlledAccordionContainer/>
             <AccordionContainer title={'What to Learn? Accordion Controlled'} onClickTitle={setCollapsed} items={items}
                                 collapsed={collapsed}/>
-            <UnControlledRating/>
-
+            <UnControlledRatingContainer/>
             <RatingContainer title={'Controlled'} value={value} setValue={setValue}/>
-            <UnControlledOnOff onChange={(on) => on}/>
+            <UnControlledOnOffContainer onChange={(on) => on}/>
             <OnOffContainer on={on} setOn={setOn}/>
-
         </div>
     );
 }
