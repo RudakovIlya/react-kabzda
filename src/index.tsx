@@ -7,8 +7,8 @@ import reportWebVitals from './reportWebVitals';
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
 root.render(
-    <StrictMode>
+    /*<StrictMode>*/
         <App/>
-    </StrictMode>
+  /*  </StrictMode>*/
 );
 reportWebVitals();

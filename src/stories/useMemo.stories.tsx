@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from "react";
+import React, {memo, useCallback, useMemo, useState} from "react";
 
 export default {
     title: 'useMemo'
@@ -55,7 +55,7 @@ const UsersSecrets = (props: { users: string[] }) => {
     return <div>{props.users.map((u, i) => <div key={i}>{u}</div>)}</div>
 }
 
-const Users = React.memo(UsersSecrets)
+const Users = memo(UsersSecrets)
 
 export const HelpReactMemo = () => {
     console.log('HelpReactMemo')
@@ -90,7 +90,7 @@ export const LikeUseCallback = () => {
         setBooks([...books, 'Angular' + new Date().getTime()])
     }
 
-    const memoized = useCallback(addBook, [])
+    const memoized = useCallback(addBook, [books])
 
     return <>
         <button onClick={setCount}>increment</button>
@@ -110,4 +110,35 @@ const BooksSecrets = (props: BooksSecretsParams) => {
     </div>
 }
 
-const Books = React.memo(BooksSecrets)
+const Books = memo(BooksSecrets)
+
+const MarkersSecrets = memo((props: { markers: string[], addMarkers: () => void }) => {
+    console.log('MarkersSecrets render');
+    return (
+        <div>
+            <button onClick={() => props.addMarkers()}>add markers</button>
+            {props.markers.map((marker, i) => (<div key={i + Date.now()}>{marker}</div>))}
+        </div>
+    )
+})
+
+export const LikeUseCallbacks = () => {
+    console.log('LikeUseCallbacks')
+    const [counter, setCounter] = useState(0)
+    const [markers, setMarkers] = useState(['Red', 'Blue', 'Yellow', 'Green']);
+
+    const setCount = () => {
+        setCounter(counter + 1)
+    };
+
+    const memoized = useCallback(() => {
+        setMarkers([...markers, 'Pink'])
+    }, [markers])
+
+    return <>
+        <button onClick={setCount}>+</button>
+        {counter}
+        <MarkersSecrets markers={markers} addMarkers={memoized}></MarkersSecrets>
+    </>
+}
+
