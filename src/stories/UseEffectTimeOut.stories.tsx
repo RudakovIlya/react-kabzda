@@ -9,7 +9,7 @@ export default {
 export const SetTimeOutUseEffect = () => {
     const [date, setDate] = useState(new Date());
     const [timerID, setTimerID] = useState<number | undefined>(undefined)
-
+    const [count, setCount] = useState(1)
 
     useEffect(() => {
         setTimerID(+setInterval(() => setDate(new Date()), 1000))
@@ -23,8 +23,28 @@ export const SetTimeOutUseEffect = () => {
 
     const stringTime = formatter.format(date);
 
+    const stopTimer = () => {
+        clearInterval(timerID)
+    }
+
+    const upDateState = (prevState: number) => {
+        return prevState + 1
+    }
+
+    useEffect(() => {
+        setInterval(() => {
+            setCount(upDateState)
+        }, 1000)
+    }, [])
 
     return <>
-        Time:  &nbsp; {stringTime}
+        <div>
+            <div>Time:  &nbsp; {stringTime} &nbsp; &nbsp; &nbsp;</div>
+            <button onClick={stopTimer}>stop timer</button>
+        </div>
+
+        <div>
+            <h1>{count}</h1>
+        </div>
     </>
 }
