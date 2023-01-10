@@ -10,12 +10,11 @@ const generateData = () => {
     for (let i = 1; i < 10000; i++) {
         sum += i * Math.pow(i, 2)
     }
-    console.log(sum)
+
     return sum
 }
 
 export const Example1 = () => {
-    console.log('example')
     const [counter, setCounter] = useState(generateData)
 
     const changer = (state: number) => {
