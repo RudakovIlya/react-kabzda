@@ -12,7 +12,11 @@ export const SetTimeOutUseEffect = () => {
     const [count, setCount] = useState(1)
 
     useEffect(() => {
-        setTimerID(+setInterval(() => setDate(new Date()), 1000))
+        const id = +setInterval(() => setDate(new Date()), 1000);
+        setTimerID(id);
+        return () => {
+            clearInterval(id)
+        }
     }, [])
 
     const formatter = new Intl.DateTimeFormat("ru", {
@@ -48,3 +52,5 @@ export const SetTimeOutUseEffect = () => {
         </div>
     </>
 }
+
+
