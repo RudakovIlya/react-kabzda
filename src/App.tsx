@@ -17,11 +17,7 @@ function App() {
 
     const [on, setOn] = useState<boolean>(false);
 
-    const items = [{id: '1', title: 'Title', value: 2}, {id: '2', title: 'Title', value: 2}, {
-        id: '3',
-        title: 'Title',
-        value: 2
-    }, {id: '4', title: 'Title', value: 2}]
+    const items = [{id: '1', title: 'Title', value: 2}, {id: '4', title: 'Title', value: 2}]
 
     return (
         <div className={'App'}>
